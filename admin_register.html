@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | masaki blog</title>
+</head>
+
+<body class="auth-page auth-page--meadow">
+    <div class="auth-scene">
+        <div class="auth-scene__glow auth-scene__glow--one"></div>
+        <div class="auth-scene__glow auth-scene__glow--two"></div>
+        <div class="auth-scene__particles" data-particle-theme="leaf"></div>
+
+        <main class="auth-card">
+            <p class="auth-card__eyebrow">masaki blog</p>
+            <h1 class="auth-card__title">Register</h1>
+
+            <form class="auth-form" th:action="@{/admin/register/process}" method="post">
+                <label class="auth-field" for="adminName">
+                    <span class="sr-only">User Name</span>
+                    <input id="adminName" type="text" name="adminName" placeholder="UserName"
+                        th:value="${account?.accountName}" autocomplete="username" required>
+                </label>
+
+                <label class="auth-field" for="registerEmail">
+                    <span class="sr-only">User Email</span>
+                    <input id="registerEmail" type="email" name="adminEmail" placeholder="UserEmail"
+                        th:value="${account?.accountEmail}" autocomplete="email" required>
+                </label>
+
+                <label class="auth-field" for="registerPassword">
+                    <span class="sr-only">Password</span>
+                    <input id="registerPassword" type="password" name="password" placeholder="Password"
+                        autocomplete="new-password" required>
+                </label>
+
+                <button class="auth-button auth-button--green" type="submit">Register</button>
+            </form>
+
+            <a class="auth-link" href="admin_login.html">ログインはこちら</a>
+        </main>
+    </div>
+
+
+</body>
+
+</html>
