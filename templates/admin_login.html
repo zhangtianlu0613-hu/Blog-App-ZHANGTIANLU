@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome | masaki blog</title>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/auth.css">
 </head>
 
 <body class="auth-page auth-page--sky">
@@ -15,10 +18,9 @@
         <div class="auth-scene__particles" data-particle-theme="petal"></div>
 
         <main class="auth-card">
-            <p class="auth-card__eyebrow">masaki blog</p>
             <h1 class="auth-card__title">Welcome</h1>
 
-            <form class="auth-form" th:action="@{/admin/login/process}" method="post">
+            <form class="auth-form" action="#" method="post">
                 <label class="auth-field" for="adminEmail">
                     <span class="sr-only">User Email</span>
                     <input id="adminEmail" type="email" name="adminEmail" placeholder="UserEmail"
@@ -34,7 +36,7 @@
                 <button class="auth-button" type="submit">Login</button>
             </form>
 
-            <a class="auth-link" href="admin_register.html">新規登録はこちら</a>
+            <a class="auth-link" href="./admin_register.html">新規登録はこちら</a>
         </main>
     </div>
 

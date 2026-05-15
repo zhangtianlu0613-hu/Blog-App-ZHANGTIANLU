@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | masaki blog</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/auth.css">
 </head>
 
 <body class="auth-page auth-page--meadow">
@@ -15,20 +18,19 @@
         <div class="auth-scene__particles" data-particle-theme="leaf"></div>
 
         <main class="auth-card">
-            <p class="auth-card__eyebrow">masaki blog</p>
             <h1 class="auth-card__title">Register</h1>
 
-            <form class="auth-form" th:action="@{/admin/register/process}" method="post">
+            <form class="auth-form" action="#" method="post">
                 <label class="auth-field" for="adminName">
                     <span class="sr-only">User Name</span>
                     <input id="adminName" type="text" name="adminName" placeholder="UserName"
-                        th:value="${account?.accountName}" autocomplete="username" required>
+                         autocomplete="username" required>
                 </label>
 
                 <label class="auth-field" for="registerEmail">
                     <span class="sr-only">User Email</span>
                     <input id="registerEmail" type="email" name="adminEmail" placeholder="UserEmail"
-                        th:value="${account?.accountEmail}" autocomplete="email" required>
+                         autocomplete="email" required>
                 </label>
 
                 <label class="auth-field" for="registerPassword">
@@ -40,10 +42,9 @@
                 <button class="auth-button auth-button--green" type="submit">Register</button>
             </form>
 
-            <a class="auth-link" href="admin_login.html">ログインはこちら</a>
+            <a class="auth-link" href="./admin_login.html">ログインはこちら</a>
         </main>
     </div>
-
 
 </body>
 
