@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete List</title>
+    <title>Blog List</title>
     <link rel="stylesheet" href="../static/css/reset.css">
     <link rel="stylesheet" href="../static/css/base.css">
     <link rel="stylesheet" href="../static/css/blog-shell.css">
@@ -37,18 +37,31 @@
 
     <main class="site-main">
         <section class="section-title">
-            <p class="section-title__sub">削除フロー</p>
-            <h1>削除リスト</h1>
+            <p class="section-title__sub">Journal Showcase</p>
+            <h1>Blog List</h1>
             <!-- <p class="section-title__welcome">
-                ようこそ、
-                <span>ゲスト</span>
+                Welcome,
+                <span>Guest</span>
             </p> -->
             <div class="section-title__line"></div>
         </section>
 
         <section class="list-toolbar">
-            <p>ここには自分のブログだけが表示されます。削除したいブログをクリックすると、削除ボタンがある確認ページに進みます。</p>
-            <a class="pill-button pill-button--coral" href="/blog/register">新規ブログ</a>
+            <div class="list-toolbar__copy">
+                <p>すべての記事を一箇所で閲覧できます。カードを開いて記事全文を読み、ディスカッションに参加しましょう。</p>
+                <form class="search-form" action="/blog/list" method="get">
+                    <label class="sr-only" for="keyword">タイトルでブログを検索</label>
+                    <input id="keyword" type="search" name="keyword" value=""
+                        placeholder="ブログタイトルで検索">
+                    <button class="pill-button pill-button--warm" type="submit">検索</button>
+                    <!-- <a class="search-form__reset" href="/blog/list">クリア</a> -->
+                </form>
+                <!-- <p class="search-summary">
+                    検索結果を表示中。
+                </p> -->
+            </div>
+            <!-- <a class="pill-button pill-button--coral" href="/blog/register">ブログを書く</a> -->
+            <!-- <a class="pill-button pill-button--coral" href="/admin/login">ログインして書く</a> -->
         </section>
 
         <section class="blog-grid-section">
@@ -56,18 +69,18 @@
 
             <!-- <div class="blog-grid">
                 <article class="blog-card">
-                    <a class="blog-card__link" href="/blog/delete/confirm/{blogId}">
+                    <a class="blog-card__link" href="/blog/{blogId}">
                         <div class="blog-card__media blog-card__media--empty">
-                            <span class="blog-card__badge">Blog</span>
+                            <span class="blog-card__badge">ブログ</span>
                             <img src="/blog-img/${blog.blogImage}" alt="${blog.blogTitle}">
-                            <span class="blog-card__placeholder">Blog Story</span>
+                            <span class="blog-card__placeholder">ブログストーリー</span>
                         </div>
 
                         <div class="blog-card__body">
                             <p class="blog-card__date">2026/05/14</p>
-                            <h2>Blog Title</h2>
+                            <h2>ブログタイトル</h2>
                             <p class="blog-card__summary">
-                                削除確認ページへ進みます。
+                                記事の短い要約がここに表示されます。
                             </p>
                         </div>
                     </a>
@@ -75,9 +88,11 @@
             </div> -->
 
             <div class="empty-state">
-                <h2>削除対象のブログがありません</h2>
-                <p>まだ自分のブログがないため、ここには何も表示されていません。</p>
-                <a class="pill-button pill-button--mint" href="/blog/register">最初のブログを作成</a>
+                <h2>まだ記事がありません</h2>
+                <p>最初の記事を作成すると、ここにカードとして表示されます。</p>
+                <!-- <a class="pill-button pill-button--mint" href="/blog/register">最初のブログを作成</a> -->
+                <!-- <a class="pill-button pill-button--mint" href="/admin/login">ログインして作成</a> -->
+                <!-- <a class="pill-button pill-button--mint" href="/blog/list">すべての記事に戻る</a> -->
             </div>
         </section>
     </main>
