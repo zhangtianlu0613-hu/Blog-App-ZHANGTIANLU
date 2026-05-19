@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Edit</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/blog-shell.css">
+    <link rel="stylesheet" href="../static/css/blog-form.css">
+</head>
+
+<body class="site-page form-page">
+    <div class="page-orb page-orb--peach"></div>
+    <div class="page-orb page-orb--cream"></div>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <button class="site-header__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
+                data-nav-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" data-nav>
+                <a href="blog_list.html">Home</a>
+                <a href="blog_register.html">Blog Register</a>
+                <a href="#">Profile</a>
+                <a href="blog_delete_list.html">Delete List</a>
+                <a href="admin_login.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main site-main--form">
+        <section class="editor-shell">
+            <p class="editor-shell__eyebrow">Blog editor</p>
+            <h1 class="editor-shell__title">記事編集</h1>
+
+            <div class="status-stack">
+                <p class="status-banner status-banner--success" hidden>
+                    Saved successfully.
+                </p>
+                <p class="status-banner status-banner--error" hidden>
+                    Something went wrong.
+                </p>
+            </div>
+
+            <form class="editor-form" action="#" method="post" enctype="multipart/form-data"
+                data-editor-form>
+                <input type="hidden" name="blogId">
+
+                <div class="editor-form__row">
+                    <span>画像</span>
+                    <div class="file-field file-field--stacked">
+                        <div class="file-field__controls">
+                            <label class="file-field__button" for="blogImage">ファイルを選択</label>
+                            <input id="blogImage" type="file" name="blogImage" accept="image/*" data-file-input>
+                            <span class="file-field__name" data-file-name>選択されていません</span>
+                        </div>
+
+                        <div class="image-preview">
+                            <img class="image-preview__image" data-image-preview alt="Blog image preview" hidden>
+                            <p class="image-preview__empty" data-image-preview-empty>選択した画像がここに表示されます。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor-form__row">
+                    <label for="blogTitle">タイトル</label>
+                    <input id="blogTitle" type="text" name="blogTitle" placeholder="タイトルを入力してください" required>
+                </div>
+
+                <div class="editor-form__row">
+                    <label for="publishDate">日付</label>
+                    <input id="publishDate" type="date" name="publishDate">
+                </div>
+
+                <div class="editor-form__row">
+                    <label for="categoryName">カテゴリ</label>
+                    <input id="categoryName" type="text" name="categoryName" placeholder="カテゴリ名を入力してください">
+                </div>
+
+                <div class="editor-form__row editor-form__row--textarea">
+                    <label for="article">詳細</label>
+                    <textarea id="article" name="article" placeholder="記事の本文を入力してください。" required></textarea>
+                </div>
+
+                <div class="editor-actions">
+                    <div class="editor-actions__primary">
+                        <button class="pill-button pill-button--coral" type="submit">変更</button>
+                        <a class="pill-button pill-button--mint" href="#">戻る</a>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
